@@ -1,0 +1,116 @@
+{% load cloudinary %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review This</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/baacfa72b9.js"></script>
+    <style>
+        .phone{
+        height:105%;
+        width:105%;
+        margin-top:20px;
+        }
+         .text{
+        font-family: 'Shrikhand', cursive;
+        color:#436ea5;
+        }
+        .text1{
+        font-family: 'Lobster', cursive;
+        color:#bc32b3;
+        }
+         #cta{
+        background-color:orange;
+        margin:1px 0 0 0;
+}
+        .text4{
+        font-family:'Lobster',cursive;
+        margin-top:40px;
+        height:30%;
+        color:white;
+        }
+        .text_error{
+        font-family:'Lobster',cursive;
+        margin-top:40px;
+        height:30%;
+        color:red;
+        }
+         .text2{
+        font-family: 'Lobster', cursive;
+        color:white;
+        font-size:45px;
+        margin-top:10px;
+        height:30%;
+        }
+         .m{
+        background-color:lightyellow;
+        }
+         #me {
+            -webkit-animation: rotation 15s infinite linear;
+        }
+        @-webkit-keyframes rotation {
+            from {-webkit-transform: rotate(0deg);}
+            to   {-webkit-transform: rotate(359deg);}
+        }
+    </style>
+</head>
+<body class="m">
+<nav class="navbar fixed-top navbar-light" id="cta">
+    <div class="container">
+        <a class="text2 navbar-brand" href="#"><i class="fa fa-camera-retro" aria-hidden="true">Review This</i></a>
+         <ul class="nav navbar-nav navbar-right">
+             <li><h2 class="text4">An Interactive Platform for uploading your photos and adding you own personal reviews to it.</h2></li>
+         </ul>
+    </div>
+</nav>
+   <div class="cta">
+    <div class = "row">
+        <div class ="col-md-1">
+        </div>
+        <div class ="col-md-4">
+            <br>
+                        <br>
+                <h3 class="text1">Review your Content</h3>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class ="col-md-4">
+            <br><br><br>
+        <form class="form-horizontal" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <h1 class ="text" align="center"></h1>
+              <br>
+            <label for="username" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+              <input type="username" class="form-control"  placeholder="username" id="username" required name="username" value={{ username }}>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" placeholder="password" id="password" required name="password" value={{ password }}>
+            </div>
+          </div>
+            <input type="submit" class="btn btn-primary" value="Login" align="center">
+        </form>
+    <div>
+        <h1 class="text" align="center">Be ready to post<a href="post/"></a></h1>
+        <form action="login/" method="get">
+            <h1 class="text_error">{{ text }}</h1>
+        </form>
+    </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+
+    </div></div>
+</body>
+</html>
